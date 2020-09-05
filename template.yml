@@ -1,0 +1,8 @@
+metadata:
+  template: true
+  
+steps:
+  - name: hello_from_the_template
+    image: alpine:latest
+    commands:
+      - echo "template says hi"
