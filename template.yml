@@ -14,3 +14,10 @@ steps:
 {{ end }}
     commands:
       - echo "template says hi"
+      
+  - name: regular_template_step
+    image: alpine:latest
+    ruleset:
+      event: deployment
+    commands:
+      - echo "a fake deployment"
