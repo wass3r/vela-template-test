@@ -1,8 +1,16 @@
+{{ $ruleset := .ruleset_override }}
+
 metadata:
   template: true
   
 steps:
   - name: hello_from_the_template
     image: alpine:latest
+{{ if (eq (kindOf $ruleset) "string") }}
+    {{ .ruleset_override }}
+{{ else }}
+    ruleset:
+      event: tag
+{{ end }}
     commands:
       - echo "template says hi"
